@@ -2,7 +2,6 @@
 import math
 import numpy as np
 from matplotlib import pyplot as plt
-# from .modules import functions as f
 
 def cuadratica (axis_x: list):
     '''
@@ -49,7 +48,6 @@ def exp (axis_x: list):
     return f_list
 
 
-# if __name__ == "__main__":
 delta = [0.5, math.pi, 0.05, 0.05]
 
 # Ej 2.1
