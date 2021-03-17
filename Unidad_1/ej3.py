@@ -40,4 +40,3 @@ plt.show() # Muestro plot
 
 
 # plt.matshow(ajedrezArr) # Este es otro tipo de plot pero no me estaría sirviendo para lo que necesito
-

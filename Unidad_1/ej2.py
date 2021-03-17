@@ -48,27 +48,25 @@ def exp (axis_x: list):
     return f_list
 
 
-delta = [0.5, math.pi, 0.05, 0.05]
-
 # Ej 2.1
-axis_x = np.arange(start = delta[1], stop = 10*delta[0], step = delta[0])
-axis_y1 = cuadratica(axis_x = axis_x)
-plt.plot(axis_x, axis_y1, 'rx', label = 'f(x) = x^2')
+axis_x1 = np.arange(start = -2.5, stop = 2.5, step = 0.1)
+axis_y1 = cuadratica(axis_x = axis_x1)
+plt.plot(axis_x1, axis_y1, 'rx', label = 'f(x) = x^2')
 
 # Ej 2.2
-axis_x = np.arange(start = delta[1], stop = 20*delta[1], step = delta[1])
-axis_y2 = cos_rara(axis_x = axis_x)
-plt.plot(axis_x, axis_y2, 'g+', label = 'f(x) = |x/8| * cos(4x)')
+axis_x2 = np.arange(start = -math.pi, stop = math.pi, step = math.pi/64)
+axis_y2 = cos_rara(axis_x = axis_x2)
+plt.plot(axis_x2, axis_y2, 'g+', label = 'f(x) = |x/8| * cos(4x)')
 
 # Ej 2.3
-axis_x = np.arange(start = delta[1], stop = 20*delta[1], step = delta[1])
-axis_y3 = log_nat(axis_x = axis_x)
-plt.plot(axis_x, axis_y3, 'b*', label = 'f(x) = ln(x)')
+axis_x3 = np.arange(start = 0.5, stop = 5, step = 0.05)
+axis_y3 = log_nat(axis_x = axis_x3)
+plt.plot(axis_x3, axis_y3, 'b*', label = 'f(x) = ln(x)')
 
 # Ej 2.4
-axis_x = np.arange(start = 0, stop = 1*delta[1])
-axis_y4 = exp(axis_x = axis_x)
-plt.plot(axis_x, axis_y4, 'y-', label = 'f(x) = e^x')
+axis_x4 = np.arange(start = -2, stop = 2, step = 0.05)
+axis_y4 = exp(axis_x = axis_x4)
+plt.plot(axis_x4, axis_y4, 'y-', label = 'f(x) = e^x')
 
 # Ploteo las 4 funciones
 plt.xlabel('x')
