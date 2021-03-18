@@ -48,12 +48,16 @@ for n, fun in enumerate(fList):
     fig, ax3d = config_plt()
     plt.figure(n + 1)
     ax3d = plt.axes(projection='3d')
-    surf=ax3d.plot_surface(X, Y, Z, rstride=7, cstride=7, cmap="viridis")
+    surf=ax3d.plot_surface(X, Y, Z, rstride=7, cstride=7, cmap="gray")
     fig.colorbar(surf, ax=ax3d)
     ax3d.set_title(f'Plot de superficie / Ejercicio {n+1}')
     ax3d.set_xlabel('X')
     ax3d.set_ylabel('Y')
     ax3d.set_zlabel('Z')
+
+# Curva de nivel de una función elegida
+# X, Y, Z = ejer_4()
+# TODO: 15 curvas de nivel
 
 # plt.savefig("Customized Surface Plot.png")
 
