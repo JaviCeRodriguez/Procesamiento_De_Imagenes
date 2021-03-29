@@ -13,7 +13,7 @@ plt.title('Imagen submuestreada')
 
 plt.subplot(2, 2, (1, 2))
 plt.imshow(image)
-plt.title('Imagen 0riginal')
+plt.title('Imagen Original')
 
 plt.subplot(2, 2, 4)
 plt.imshow(image_sobre)
