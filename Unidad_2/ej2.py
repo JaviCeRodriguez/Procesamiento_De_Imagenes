@@ -3,7 +3,7 @@ from skimage import data, io
 from skimage.transform import resize
 
 # image = data.astronaut()
-image = io.imread('../images/loros.jpg')
+image = io.imread('D:\GitHub\Procesamiento-De-Imagenes\images\loros.jpg')
 image_sub = resize(image, (image.shape[0]//6, image.shape[1]//6))
 image_sobre = resize(image, (image.shape[0]*4, image.shape[1]*4))
 

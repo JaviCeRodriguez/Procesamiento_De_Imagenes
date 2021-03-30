@@ -1,3 +1,5 @@
+# TODO: Ver otras posibilidades de adjuste de brillo
+
 import matplotlib.pyplot as plt
 from skimage import img_as_float
 from skimage.color import rgb2gray

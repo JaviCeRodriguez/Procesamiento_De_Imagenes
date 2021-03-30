@@ -18,7 +18,7 @@ plot_img(img1, 231, 'Mujer')
 plot_img(img2, 232, 'Árbol')
 plot_img(img1 + img2, 233, 'Suma')
 plot_img(img1 - img2, 234, 'Resta')
-plot_img(img1 * img2, 235, 'Multiplicación')
+plot_img((img1 * img2).astype(np.float_), 235, 'Multiplicación')
 plot_img((img1 * 0.3 + img2 * 0.7).astype(np.uint8), 236, 'Combinación')
 
 plt.show()

@@ -1,3 +1,6 @@
+# Este ejercicio era anteriormente el 3 pero no era lo que se pedía.
+# Lo dejo igualmente para tener a mano el método dowscale_local_mean de scikit
+
 import numpy as np
 import matplotlib.pyplot as plt
 from skimage.io import imread
