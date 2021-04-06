@@ -3,10 +3,11 @@ from skimage import util
 from skimage import img_as_float
 from skimage.io import imread
 
+
 def plot_img_hist(img, num_plot, title):
-    '''
-    Plots de imagen e histograma
-    '''
+    """
+        Plots de imagen e histograma
+    """
     # Imagen
     plt.subplot(num_plot)
     plt.imshow(img, cmap='gray')
