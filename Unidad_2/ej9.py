@@ -1,9 +1,14 @@
+# Aplique a una imagen grayscale la transformación apropiada para que su 
+# histograma se comprima a un cierto rango definido por el usuario (shrinking).
+
 import numpy as np
 import matplotlib.pyplot as plt
 from skimage import img_as_float
 from skimage.color import gray2rgb
 from skimage.io import imread
 from skimage.exposure import rescale_intensity
+import tkinter as tk
+from tkinter import filedialog
 
 def plot_img_hist(img, num_plot, title, bins=255):
     '''
@@ -20,15 +25,25 @@ def plot_img_hist(img, num_plot, title, bins=255):
     plt.subplot(num_plot + 2)
     plt.hist(img_as_float(img).ravel(), bins=bins)
     plt.xlim(0, 1)
+    
+def file_read():
+    file_path = filedialog.askopenfilename()
+    return file_path
 
 
-# Imagen RGB
-# img_gray = imread('D:/GitHub/Procesamiento-De-Imagenes/images/sauvola.JPG')
-# Imagen Grayscale 
-img_gray = imread('D:/GitHub/Procesamiento-De-Imagenes/images/tigre3.jpg')
-out_range = (0, 50)
-img_gray_shrink = rescale_intensity(img_gray, out_range=out_range).astype(np.uint8)
-plot_img_hist(img_gray, 221, 'Tigre')
-plot_img_hist(img_gray_shrink, 222, 'Tigre shrinking', bins=out_range[1]-out_range[0])
+try:
+    # Busco imagen y obtengo su ruta
+    root = tk.Tk()
+    root.withdraw() 
+    img = imread(file_read())
+    out_range = (0, 50)
+    img_shrink = rescale_intensity(img, out_range=out_range).astype(np.uint8)
+    plot_img_hist(img, 221, 'Imagen original')
+    plot_img_hist(img_shrink, 222, 'Imagen shrinking', bins=out_range[1]-out_range[0])
+    
+    plt.show()
+except:
+    print('Cerraste la ventana!')
 
-plt.show()
+print('👋🏽')
+root.destroy()
