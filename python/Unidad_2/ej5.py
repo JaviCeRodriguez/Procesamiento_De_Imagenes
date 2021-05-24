@@ -10,7 +10,7 @@ from skimage.exposure import adjust_sigmoid
 import tkinter as tk
 from tkinter import filedialog
 
-def plot_img_hist(img, num_plot, title):
+def plot_img_hist(img, num_plot, title='Imagen original'):
     '''
     Plots de imagen e histograma
     '''
@@ -32,7 +32,7 @@ try:
     img_lowcontrast = adjust_sigmoid(img, cutoff=0.5, gain=0.1)
     img_highcontrast = adjust_sigmoid(img, cutoff=0.5, gain=20)
     
-    plot_img_hist(img, 231, 'Imagen original')
+    plot_img_hist(img, 231)
     plot_img_hist(img_lowcontrast, 232, 'Imagen con bajo contraste')
     plot_img_hist(img_highcontrast, 233, 'Imagen con alto contraste')
     
