@@ -1,0 +1,25 @@
+% Abra una imagen y agréguele ruido sal y pimienta. Aplíquele dos filtros, 
+% uno pasa bajos yotro no lineal (mediana). Observe como trabaja cada 
+% filtro. Modifique la dimensión del filtromediana y la densidad de puntos 
+% con ruido
+
+[file, path] = uigetfile({'*.JPG';'*.bmp';'*.jpg';'*.tiff'});
+dir = strcat(path,file);
+info = imfinfo(dir);
+I=imread(dir);
+
+switch info.ColorType
+    case 'grayscale'
+        I=imread(dir);
+    case 'truecolor'
+        rgb=imread(dir);
+        I=rgb2gray(rgb);
+    case 'indexed'
+        [X,map]=imread(dir);
+        I=ind2gray(X,map);
+end
+
+% Convierto la imagen a double
+I = im2double(I);
+
+N = imnoise(I, 'salt & pepper', 0

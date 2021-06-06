@@ -1,0 +1,18 @@
+% Realce los bordes de una imagen usando la segunda derivada 
+% mediante el comando fspecial
+
+[file, path] = uigetfile({'*.tiff';'*.JPG';'*.bmp';'*.jpg'});
+dir = strcat(path,file);
+info = imfinfo(dir);
+I=imread(dir);
+
+switch info.ColorType
+    case 'grayscale'
+        I=imread(dir);
+    case 'truecolor'
+        rgb=imread(dir);
+        I=rgb2gray(rgb);
+    case 'indexed'
+        [X,map]=imread(dir);
+        I=ind2gray(X,map);
+end
