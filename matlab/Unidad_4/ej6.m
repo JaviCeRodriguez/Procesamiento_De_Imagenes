@@ -1,7 +1,5 @@
-% Abra una imagen y agréguele ruido sal y pimienta. Aplíquele dos filtros, 
-% uno pasa bajos yotro no lineal (mediana). Observe como trabaja cada 
-% filtro. Modifique la dimensión del filtromediana y la densidad de puntos 
-% con ruido
+% Abra una imagen y calcule su DFT 2D (utilice la función fft2). 
+% Visualice la imagen y suespectro de magnitud. 
 
 [file, path] = uigetfile({'*.JPG';'*.bmp';'*.jpg';'*.tiff'});
 dir = strcat(path,file);
@@ -22,4 +20,9 @@ end
 % Convierto la imagen a double
 I = im2double(I);
 
-N = imnoise(I, 'salt & pepper', 0
+% TF de la imagen, centrado y compresión del rango dinámico
+IDFT = log(abs(fftshift(fft2(I)) + 1));
+
+% Plots
+subplot(1,2,1); imshow(I); title('Imagen original');
+subplot(1,2,2); imshow(IDFT, []); title('TF de la imagen');
