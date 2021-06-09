@@ -48,7 +48,7 @@ tf=fft2(IN); fti=fftshift(fft2(IN)); tfim=(log(abs(fti)+1));
 % Defino la malla de coordenadas que forman el dominio frecuencial bidim
 [U,V] = freqspace([M,N],'meshgrid');     %este comando es como meshgrid pero para frecuencial
 D=sqrt(U.^2+V.^2); %distancia euclidea
-D0=0.1;
+D0=0.07;
 
 % Defino filtro IDEAL
 HPB_ideal=D<=D0; HPA_ideal=D>=D0;
